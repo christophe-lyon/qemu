@@ -1,5 +1,6 @@
-         QEMU README
-         ===========
+===========
+QEMU README
+===========
 
 QEMU is a generic and open source machine & userspace emulator and
 virtualizer.
@@ -29,13 +30,14 @@ open source applications such as oVirt, OpenStack and virt-manager.
 QEMU as a whole is released under the GNU General Public License,
 version 2. For full licensing details, consult the LICENSE file.
 
-
 Building
-========
+--------
 
 QEMU is multi-platform software intended to be buildable on all modern
 Linux platforms, OS-X, Win32 (via the Mingw64 toolchain) and a variety
 of other UNIX targets. The simple steps to build QEMU are:
+
+.. code:: shell
 
   mkdir build
   cd build
@@ -50,9 +52,11 @@ Additional information can also be found online via the QEMU website:
 
 
 Submitting patches
-==================
+------------------
 
 The QEMU source code is maintained under the GIT version control system.
+
+.. code:: shell
 
    git clone git://git.qemu-project.org/qemu.git
 
@@ -70,7 +74,7 @@ the QEMU website
 
 
 Bug reporting
-=============
+-------------
 
 The QEMU project uses Launchpad as its primary upstream bug tracker. Bugs
 found when running code built from QEMU git or upstream released sources
@@ -89,18 +93,34 @@ For additional information on bug reporting consult:
 
 
 Contact
-=======
+-------
 
 The QEMU community can be contacted in a number of ways, with the two
 main methods being email and IRC
 
- - qemu-devel@nongnu.org
-   http://lists.nongnu.org/mailman/listinfo/qemu-devel
- - #qemu on irc.oftc.net
+- qemu-devel@nongnu.org
+  http://lists.nongnu.org/mailman/listinfo/qemu-devel
+- #qemu on irc.oftc.net
 
 Information on additional methods of contacting the community can be
 found online via the QEMU website:
 
   http://qemu-project.org/Contribute/StartHere
 
--- End
+Plugins
+-------
+
+This version adds support for QEMU plugins on next/master branch.
+
+To configure with plugins, use:
+
+.. code:: shell
+
+    ./configure --enable-capstone --enable-tcg-plugin \
+    --target-list=x86_64-linux-user,arm-linux-user,aarch64-linux-user,arm-softmmu
+
+Build status (next/master)
+--------------------------
+
+.. image:: https://travis-ci.org/atos-tools/qemu.svg?branch=next%2Fmaster
+    :target: https://travis-ci.org/atos-tools/qemu
